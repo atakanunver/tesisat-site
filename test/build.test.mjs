@@ -52,3 +52,9 @@ test("JSON-LD LocalBusiness ve FAQPage geçerli JSON olarak parse ediliyor", () 
   assert.equal(faqPage["@type"], "FAQPage");
   assert.ok(faqPage.mainEntity.length >= 5);
 });
+
+test("kampanya sayfası build ediliyor ve fiyatı içeriyor", () => {
+  const html = readFileSync("_site/kampanya/index.html", "utf8");
+  assert.match(html, /Kışa Hazırlık Kampanyası/);
+  assert.match(html, /4000 TL|4\.000 TL/);
+});

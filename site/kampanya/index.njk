@@ -1,0 +1,32 @@
+---
+layout: base.njk
+title: "Kışa Hazırlık Kampanyası"
+description: "Kombi bakımı + petek temizliği tek pakette 4.000 TL. WhatsApp'tan hemen randevu alın."
+permalink: "/kampanya/"
+---
+<section class="hero">
+  <h1>{{ business.campaign.name }}</h1>
+  <p>Kombi Bakımı + Petek Temizliği</p>
+  <div class="price-tag">
+    <span class="now">{{ business.campaign.package_price }} TL</span>
+    <span class="was">{{ business.campaign.normal_total_price }} TL</span>
+  </div>
+  <ul style="list-style:none;padding:0;margin:0 0 20px">
+    <li>✓ {{ business.campaign.brands_note }}</li>
+    <li>✓ {{ business.campaign.radiator_limit }} peteğe kadar petek temizliği</li>
+    <li>✓ {{ business.campaign.warranty_months }} ay garanti*</li>
+  </ul>
+  <a class="btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">
+    WhatsApp'tan Randevu Al
+  </a>
+</section>
+
+<section class="container faq">
+  <h2>Sık Sorulan Sorular</h2>
+  {% for item in business.faq %}
+  <details>
+    <summary>{{ item.q }}</summary>
+    <p>{{ item.a }}</p>
+  </details>
+  {% endfor %}
+</section>
