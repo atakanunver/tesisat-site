@@ -22,3 +22,9 @@ test("asset linkleri site.base öneki ile kuruluyor", () => {
   const html = readFileSync("_site/index.html", "utf8");
   assert.match(html, /href="\/tesisat-site\/assets\/css\/style\.css"/);
 });
+
+test("whatsapp config sayfaya enjekte edilmiş", () => {
+  const html = readFileSync("_site/index.html", "utf8");
+  assert.match(html, /__GT_WHATSAPP__/);
+  assert.match(html, /905346825560/);
+});

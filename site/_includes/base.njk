@@ -23,12 +23,18 @@
   <p><a href="tel:+{{ business.business.phone_e164 }}">{{ business.business.phone_display }}</a></p>
 </footer>
 
-<a class="btn-whatsapp whatsapp-sticky" id="whatsapp-sticky"
+<a class="btn-whatsapp whatsapp-sticky" id="whatsapp-sticky" data-whatsapp-cta
    href="https://wa.me/{{ business.business.phone_e164 }}"
    aria-label="WhatsApp'tan yazın">
   WhatsApp
 </a>
 
+<script>
+  window.__GT_WHATSAPP__ = {
+    phone: "{{ business.business.phone_e164 }}",
+    messages: {{ business.whatsapp_messages | dump | safe }}
+  };
+</script>
 <script src="{{ site.base }}/assets/js/whatsapp.js" defer></script>
 </body>
 </html>
