@@ -1,9 +1,97 @@
 ---
 layout: base.njk
-title: "Ana Sayfa"
-description: "Gürbüz Teknik Kışa Hazırlık Kampanyası"
+title: "Kombi Bakımı ve Petek Temizliği"
+description: "Çankırı ve Kastamonu'da Kışa Hazırlık Kampanyası: Kombi bakımı + petek temizliği 4.000 TL. WhatsApp'tan randevu alın."
 ---
 <section class="hero">
-  <h1>{{ business.business.name }}</h1>
-  <p>Site yapım aşamasında.</p>
+  <h1>Kışa Hazır Girin</h1>
+  <p>Kombi Bakımı + Petek Temizliği</p>
+  <div class="price-tag">
+    <span class="now">{{ business.campaign.package_price }} TL</span>
+    <span class="was">{{ business.campaign.normal_total_price }} TL</span>
+  </div>
+  <ul style="list-style:none;padding:0;margin:0 0 20px">
+    <li>✓ {{ business.campaign.brands_note }}</li>
+    <li>✓ {{ business.campaign.radiator_limit }} peteğe kadar petek temizliği</li>
+    <li>✓ {{ business.campaign.warranty_months }} ay garanti*</li>
+    <li>✓ Yerinde servis</li>
+  </ul>
+  <a class="btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">
+    WhatsApp'tan Randevu Al
+  </a>
+  <p style="margin-top:14px">
+    <a href="tel:+{{ business.business.phone_e164 }}" style="color:#fff">
+      {{ business.business.phone_display }}
+    </a>
+  </p>
+</section>
+
+<section class="container">
+  <h2>Hizmetlerimiz</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Kombi Bakımı</h3>
+      <p>{{ business.campaign.boiler_maintenance_price }} TL — {{ business.campaign.brands_note }}.</p>
+    </div>
+    <div class="card">
+      <h3>Petek Temizliği</h3>
+      <p>{{ business.campaign.radiator_cleaning_price }} TL — {{ business.campaign.radiator_limit }} peteğe kadar.</p>
+    </div>
+    <div class="card">
+      <h3>Kombi + Petek Paketi</h3>
+      <p>{{ business.campaign.package_price }} TL (normal {{ business.campaign.normal_total_price }} TL).</p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Neden {{ business.business.name }}?</h2>
+  <div class="cards">
+    <div class="card"><p>{{ business.business.legal_note }}.</p></div>
+    <div class="card"><p>{{ business.campaign.brands_note }} için yerinde servis.</p></div>
+    <div class="card"><p>Yapılan işçilik için {{ business.campaign.warranty_months }} ay garanti.</p></div>
+    <div class="card"><p>WhatsApp üzerinden hızlı iletişim, {{ business.business.working_hours }} hizmet.</p></div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Nasıl Çalışıyor?</h2>
+  <div class="cards">
+    <div class="card"><p>WhatsApp'tan yazın veya arayın.</p></div>
+    <div class="card"><p>İhtiyacınızı ve bölgenizi paylaşın, randevu netleşsin.</p></div>
+    <div class="card"><p>Kararlaştırılan tarihte yerinde servis alın.</p></div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Hizmet Bölgeleri</h2>
+  <div class="cards">
+    {% for area in business.service_areas %}
+    <a class="card" href="{{ site.base }}/{{ area.slug }}/" style="text-decoration:none;color:inherit;display:block">
+      <h3>{{ area.title }}</h3>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container faq">
+  <h2>Sık Sorulan Sorular</h2>
+  {% for item in business.faq %}
+  <details>
+    <summary>{{ item.q }}</summary>
+    <p>{{ item.a }}</p>
+  </details>
+  {% endfor %}
+</section>
+
+<section class="container" style="text-align:center">
+  <h2>İletişim</h2>
+  <p>
+    <a href="tel:+{{ business.business.phone_e164 }}">{{ business.business.phone_display }}</a><br>
+    {{ business.business.address }}<br>
+    <a href="{{ business.business.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
+  </p>
+  <p style="font-size:.85rem;color:var(--ice)">
+    * Garanti kapsamı hizmet sırasında netleştirilir.
+  </p>
 </section>

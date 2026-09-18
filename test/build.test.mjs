@@ -28,3 +28,15 @@ test("whatsapp config sayfaya enjekte edilmiş", () => {
   assert.match(html, /__GT_WHATSAPP__/);
   assert.match(html, /905346825560/);
 });
+
+test("kampanya fiyatı build edilen sayfada doğru görünüyor", () => {
+  const html = readFileSync("_site/index.html", "utf8");
+  assert.match(html, /4000 TL|4\.000 TL/);
+  assert.match(html, /5000 TL|5\.000 TL/);
+});
+
+test("hizmet bölgeleri linkleri sayfada var", () => {
+  const html = readFileSync("_site/index.html", "utf8");
+  assert.match(html, /\/cankiri-kombi-bakimi\//);
+  assert.match(html, /\/kastamonu-petek-temizligi\//);
+});
