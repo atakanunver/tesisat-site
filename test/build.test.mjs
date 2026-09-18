@@ -20,7 +20,7 @@ test("style.css asset olarak kopyalanmış", () => {
 
 test("asset linkleri site.base öneki ile kuruluyor", () => {
   const html = readFileSync("_site/index.html", "utf8");
-  assert.match(html, /href="\/tesisat-site\/assets\/css\/style\.css"/);
+  assert.match(html, /href="\/tesisat-site\/assets\/css\/style\.css\?v=\d+"/);
 });
 
 test("whatsapp config sayfaya enjekte edilmiş", () => {

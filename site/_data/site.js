@@ -1,3 +1,7 @@
 module.exports = function () {
-  return { base: "/tesisat-site", domain: "https://atakanunver.github.io" };
+  return {
+    base: "/tesisat-site",
+    domain: "https://atakanunver.github.io",
+    assetVersion: Date.now(),
+  };
 };
