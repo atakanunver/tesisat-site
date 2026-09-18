@@ -1,8 +1,9 @@
 ---
 layout: base.njk
 title: "Kışa Hazırlık Kampanyası"
-description: "Kombi bakımı + petek temizliği tek pakette 4.000 TL. WhatsApp'tan hemen randevu alın."
 permalink: "/kampanya/"
+eleventyComputed:
+  description: "Kombi bakımı + petek temizliği tek pakette {{ business.campaign.package_price }} TL. WhatsApp'tan hemen randevu alın."
 ---
 <section class="hero">
   <h1>{{ business.campaign.name }}</h1>
