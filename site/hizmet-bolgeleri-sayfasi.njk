@@ -1,0 +1,29 @@
+---
+layout: base.njk
+pagination:
+  data: business.service_areas
+  size: 1
+  alias: area
+permalink: "/{{ area.slug }}/"
+eleventyComputed:
+  title: "{{ area.title }}"
+  description: "{{ area.title }} — Kışa Hazırlık Kampanyası, WhatsApp'tan randevu alın."
+---
+<section class="hero">
+  <h1>{{ area.title }}</h1>
+  <p>{{ area.intro }}</p>
+  <div class="price-tag">
+    <span class="now">{{ business.campaign.package_price }} TL</span>
+    <span class="was">{{ business.campaign.normal_total_price }} TL</span>
+  </div>
+  <a class="btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">
+    WhatsApp'tan Randevu Al
+  </a>
+</section>
+
+<section class="container">
+  <h2>{{ area.service }} Kapsamı</h2>
+  <p>{{ business.campaign.brands_note }}, {{ business.campaign.radiator_limit }} peteğe kadar petek temizliği,
+     yapılan işçilik için {{ business.campaign.warranty_months }} ay garanti.</p>
+  <p><a href="{{ site.base }}/">← Tüm hizmetlere dön</a></p>
+</section>

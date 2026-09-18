@@ -58,3 +58,16 @@ test("kampanya sayfası build ediliyor ve fiyatı içeriyor", () => {
   assert.match(html, /Kışa Hazırlık Kampanyası/);
   assert.match(html, /4000 TL|4\.000 TL/);
 });
+
+test("4 hizmet bölgesi sayfası da üretiliyor", () => {
+  const slugs = [
+    "cankiri-kombi-bakimi",
+    "cankiri-petek-temizligi",
+    "kastamonu-kombi-bakimi",
+    "kastamonu-petek-temizligi",
+  ];
+  for (const slug of slugs) {
+    const html = readFileSync(`_site/${slug}/index.html`, "utf8");
+    assert.match(html, /WhatsApp'tan Randevu Al/);
+  }
+});
