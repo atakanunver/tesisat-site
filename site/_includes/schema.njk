@@ -10,10 +10,11 @@
     "addressCountry": "TR"
   },
   "areaServed": [
-    {% for area in business.service_areas %}
-    "{{ area.il }}"{% if not loop.last %},{% endif %}
+    {% for il in business.service_area_provinces %}
+    "{{ il }}"{% if not loop.last %},{% endif %}
     {% endfor %}
   ],
+  "priceRange": "₺₺",
   "url": "{{ business.business.site_url }}",
   "sameAs": ["{{ business.business.facebook_url }}"]
 }

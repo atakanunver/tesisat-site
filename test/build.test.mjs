@@ -48,7 +48,7 @@ test("JSON-LD LocalBusiness ve FAQPage geçerli JSON olarak parse ediliyor", () 
   const localBusiness = JSON.parse(blocks[0][1]);
   const faqPage = JSON.parse(blocks[1][1]);
   assert.equal(localBusiness["@type"], "LocalBusiness");
-  assert.deepEqual(localBusiness.areaServed, ["Çankırı", "Çankırı", "Kastamonu", "Kastamonu"]);
+  assert.deepEqual(localBusiness.areaServed, ["Çankırı", "Kastamonu"]);
   assert.equal(faqPage["@type"], "FAQPage");
   assert.ok(faqPage.mainEntity.length >= 5);
 });

@@ -4,6 +4,19 @@ function buildWhatsappUrl(phoneE164, utmSource, messages) {
   return "https://wa.me/" + phoneE164 + "?text=" + encodeURIComponent(text);
 }
 
+function buildAppointmentMessage(fields) {
+  const lines = [
+    "Merhaba, internet sitesinden randevu talebim var.",
+    "Ad Soyad: " + fields.name,
+    "Telefon: " + fields.phone,
+    "İl: " + fields.il,
+    "İlçe: " + fields.ilce,
+    "Hizmet: " + fields.service,
+  ];
+  if (fields.note) lines.push("Not: " + fields.note);
+  return lines.join("\n");
+}
+
 (function attachToDom() {
   if (typeof document === "undefined") return;
 
@@ -22,8 +35,31 @@ function buildWhatsappUrl(phoneE164, utmSource, messages) {
   document.querySelectorAll("[data-whatsapp-cta]").forEach(function (el) {
     el.setAttribute("href", url);
   });
+
+  var form = document.getElementById("randevu-form");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var data = new FormData(form);
+      var message = buildAppointmentMessage({
+        name: data.get("name") || "",
+        phone: data.get("phone") || "",
+        il: data.get("il") || "",
+        ilce: data.get("ilce") || "",
+        service: data.get("service") || "",
+        note: data.get("note") || "",
+      });
+      window.open(
+        "https://wa.me/" + config.phone + "?text=" + encodeURIComponent(message),
+        "_blank"
+      );
+    });
+  }
 })();
 
 if (typeof module !== "undefined") {
-  module.exports = { buildWhatsappUrl: buildWhatsappUrl };
+  module.exports = {
+    buildWhatsappUrl: buildWhatsappUrl,
+    buildAppointmentMessage: buildAppointmentMessage,
+  };
 }

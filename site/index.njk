@@ -1,98 +1,211 @@
 ---
 layout: base.njk
-title: "Kombi Bakımı ve Petek Temizliği"
+title: "Kombi Bakımı ve Tesisat Hizmetleri"
 eleventyComputed:
   description: "Çankırı ve Kastamonu'da Kışa Hazırlık Kampanyası: Kombi bakımı + petek temizliği {{ business.campaign.package_price }} TL. WhatsApp'tan randevu alın."
 ---
 <section class="hero">
-  <h1>Kışa Hazır Girin</h1>
-  <p>Kombi Bakımı + Petek Temizliği</p>
+  <p class="eyebrow">{{ business.business.legal_note }}</p>
+  <h1>Kombi Bakımı ve Tesisat Hizmetleri</h1>
+  <p class="lead">Çankırı ve Kastamonu genelinde yerinde servis</p>
+  <p class="support">Tüm marka kombilere profesyonel bakım ve tesisat hizmeti. Kurşunlu merkezli, {{ business.business.working_hours }} WhatsApp'tan ulaşabilirsiniz.</p>
+
   <div class="price-tag">
     <span class="now">{{ business.campaign.package_price }} TL</span>
     <span class="was">{{ business.campaign.normal_total_price }} TL</span>
   </div>
-  <ul style="list-style:none;padding:0;margin:0 0 20px">
-    <li>✓ {{ business.campaign.brands_note }}</li>
-    <li>✓ {{ business.campaign.radiator_limit }} peteğe kadar petek temizliği</li>
-    <li>✓ {{ business.campaign.warranty_months }} ay garanti*</li>
-    <li>✓ Yerinde servis</li>
-  </ul>
-  <a class="btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">
-    WhatsApp'tan Randevu Al
-  </a>
-  <p style="margin-top:14px">
-    <a href="tel:+{{ business.business.phone_e164 }}" style="color:#fff">
-      {{ business.business.phone_display }}
-    </a>
+  <p class="support" style="margin-top:-6px">
+    {{ business.campaign.name }} — kombi bakımı + {{ business.campaign.radiator_limit }} peteğe kadar petek temizliği
   </p>
-</section>
 
-<section class="container">
-  <h2>Hizmetlerimiz</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Kombi Bakımı</h3>
-      <p>{{ business.campaign.boiler_maintenance_price }} TL — {{ business.campaign.brands_note }}.</p>
-    </div>
-    <div class="card">
-      <h3>Petek Temizliği</h3>
-      <p>{{ business.campaign.radiator_cleaning_price }} TL — {{ business.campaign.radiator_limit }} peteğe kadar.</p>
-    </div>
-    <div class="card">
-      <h3>Kombi + Petek Paketi</h3>
-      <p>{{ business.campaign.package_price }} TL (normal {{ business.campaign.normal_total_price }} TL).</p>
-    </div>
-  </div>
-</section>
-
-<section class="container">
-  <h2>Neden {{ business.business.name }}?</h2>
-  <div class="cards">
-    <div class="card"><p>{{ business.business.legal_note }}.</p></div>
-    <div class="card"><p>{{ business.campaign.brands_note }} için yerinde servis.</p></div>
-    <div class="card"><p>Yapılan işçilik için {{ business.campaign.warranty_months }} ay garanti.</p></div>
-    <div class="card"><p>WhatsApp üzerinden hızlı iletişim, {{ business.business.working_hours }} hizmet.</p></div>
-  </div>
-</section>
-
-<section class="container">
-  <h2>Nasıl Çalışıyor?</h2>
-  <div class="cards">
-    <div class="card"><p>WhatsApp'tan yazın veya arayın.</p></div>
-    <div class="card"><p>İhtiyacınızı ve bölgenizi paylaşın, randevu netleşsin.</p></div>
-    <div class="card"><p>Kararlaştırılan tarihte yerinde servis alın.</p></div>
-  </div>
-</section>
-
-<section class="container">
-  <h2>Hizmet Bölgeleri</h2>
-  <div class="cards">
-    {% for area in business.service_areas %}
-    <a class="card" href="{{ site.base }}/{{ area.slug }}/" style="text-decoration:none;color:inherit;display:block">
-      <h3>{{ area.title }}</h3>
+  <div class="hero-ctas">
+    <a class="btn btn-call" href="tel:+{{ business.business.phone_e164 }}">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Hemen Ara
     </a>
-    {% endfor %}
+    <a class="btn btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.3.7-1.5 1.4-2.1 1.5-.5.1-1.2.2-3.5-.7-2.9-1.2-4.8-4.1-5-4.3-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .5-.1.7.5.3.7 1 2.2 1 2.4.1.2.1.3 0 .5-.3.7-.7 1-1 1.3-.2.2-.2.4 0 .6.7 1.3 1.6 2.2 2.9 2.9.2.1.4.1.6-.1.3-.3.7-.8 1-1.2.2-.2.4-.3.6-.2l1.9.9c.2.1.4.2.5.3.1.2.1.7-.2 1.3z"/></svg>
+      WhatsApp'tan Teklif Al
+    </a>
   </div>
+</section>
+
+<section class="trust-strip">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <span>{{ business.campaign.warranty_months }} Ay Garanti</span>
+    </div>
+    <div class="trust-item">
+      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.77z"/></svg></span>
+      <span>Tüm Markalar</span>
+    </div>
+    <div class="trust-item">
+      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M4 8l8-6 8 6M4 8v13h16V8"/></svg></span>
+      <span>{{ business.campaign.radiator_limit }} Peteğe Kadar</span>
+    </div>
+    <div class="trust-item">
+      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg></span>
+      <span>Yerinde Hizmet</span>
+    </div>
+    <div class="trust-item">
+      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+      <span>Çankırı &amp; Kastamonu</span>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="fiyatlar">
+  <p class="eyebrow" style="text-align:center">Fiyatlandırma</p>
+  <h2 class="section-title">Kışa Hazırlık Kampanyası</h2>
+  <p class="section-sub">Fiyatlarımız nettir, gizli ücret yoktur. Size uygun paketi seçip WhatsApp'tan hemen randevu alabilirsiniz.</p>
+
+  <div class="price-grid">
+    <div class="price-card">
+      <h3>Kombi Bakımı</h3>
+      <div class="amount"><span class="now">{{ business.campaign.boiler_maintenance_price }} TL</span></div>
+      <ul>
+        <li>{{ business.campaign.brands_note }}</li>
+        <li>Genel kontrol ve temizlik</li>
+        <li>{{ business.campaign.warranty_months }} ay işçilik garantisi</li>
+      </ul>
+      <div class="price-ctas">
+        <a class="btn btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">WhatsApp</a>
+        <a class="btn btn-call" href="tel:+{{ business.business.phone_e164 }}">Ara</a>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <h3>Petek Temizliği</h3>
+      <div class="amount"><span class="now">{{ business.campaign.radiator_cleaning_price }} TL</span></div>
+      <ul>
+        <li>{{ business.campaign.radiator_limit }} peteğe kadar</li>
+        <li>Isıtma veriminde artış</li>
+        <li>{{ business.campaign.warranty_months }} ay işçilik garantisi</li>
+      </ul>
+      <div class="price-ctas">
+        <a class="btn btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">WhatsApp</a>
+        <a class="btn btn-call" href="tel:+{{ business.business.phone_e164 }}">Ara</a>
+      </div>
+    </div>
+
+    <div class="price-card highlight">
+      <span class="ribbon">En Avantajlı</span>
+      <h3>Kombi + Petek Paketi</h3>
+      <div class="amount">
+        <span class="now">{{ business.campaign.package_price }} TL</span>
+        <span class="was">{{ business.campaign.normal_total_price }} TL</span>
+      </div>
+      <ul>
+        <li>{{ business.campaign.brands_note }}</li>
+        <li>{{ business.campaign.radiator_limit }} peteğe kadar petek temizliği</li>
+        <li>{{ business.campaign.warranty_months }} ay işçilik garantisi</li>
+      </ul>
+      <div class="price-ctas">
+        <a class="btn btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">WhatsApp</a>
+        <a class="btn btn-call" href="tel:+{{ business.business.phone_e164 }}">Ara</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container section-alt">
+  <p class="eyebrow" style="text-align:center">Bakım Sürecinde Neler Yapılır?</p>
+  <h2 class="section-title">Paranızın karşılığı</h2>
+  <p class="section-sub">Genel bir kombi bakımı ziyaretinde tipik olarak şu adımlar uygulanır.</p>
+  <div class="steps">
+    <div class="step"><span class="num">01</span><h3>Genel Kontrol</h3><p>Kombi ve tesisatın genel durumu değerlendirilir.</p></div>
+    <div class="step"><span class="num">02</span><h3>Temizlik &amp; Bakım</h3><p>Gerekli temizlik ve bakım işlemleri yapılır.</p></div>
+    <div class="step"><span class="num">03</span><h3>Çalışma Testi</h3><p>Bakım sonrası cihaz çalışır durumda test edilir.</p></div>
+    <div class="step"><span class="num">04</span><h3>Garanti</h3><p>Yapılan işçilik için {{ business.campaign.warranty_months }} ay garanti verilir.</p></div>
+  </div>
+</section>
+
+<section class="container">
+  <p class="eyebrow" style="text-align:center">Nasıl Çalışıyor?</p>
+  <h2 class="section-title">4 adımda randevu</h2>
+  <div class="steps">
+    <div class="step"><span class="num">01</span><h3>Randevu Oluşturun</h3><p>WhatsApp'tan yazın veya arayın.</p></div>
+    <div class="step"><span class="num">02</span><h3>Bilgilerinizi Paylaşın</h3><p>İhtiyacınızı ve bölgenizi paylaşın, randevu netleşsin.</p></div>
+    <div class="step"><span class="num">03</span><h3>Adresinize Gelelim</h3><p>Kararlaştırılan tarihte yerinde servis alın.</p></div>
+    <div class="step"><span class="num">04</span><h3>Teslim &amp; Garanti</h3><p>Son kontroller yapılıp iş teslim edilir.</p></div>
+  </div>
+</section>
+
+<section class="container section-alt" id="hizmet-bolgeleri">
+  <p class="eyebrow" style="text-align:center">Hizmet Bölgelerimiz</p>
+  <h2 class="section-title">Çankırı &amp; Kastamonu</h2>
+  {% for il in business.service_area_provinces %}
+  <div class="area-group">
+    <h3>{{ il }}</h3>
+    <div class="area-links">
+      {% for area in business.service_areas %}
+      {% if area.il == il %}
+      <a href="{{ site.base }}/{{ area.slug }}/">{{ area.title }}</a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="container" id="randevu">
+  <p class="eyebrow" style="text-align:center">Randevu</p>
+  <h2 class="section-title">Randevu Talebi Oluşturun</h2>
+  <p class="section-sub">Formu doldurun, bilgileriniz hazır bir mesajla WhatsApp'a aktarılsın.</p>
+  <form id="randevu-form" class="form-card">
+    <div class="form-grid">
+      <div>
+        <label for="name">Ad Soyad</label>
+        <input id="name" name="name" type="text" required autocomplete="name">
+      </div>
+      <div>
+        <label for="phone">Telefon</label>
+        <input id="phone" name="phone" type="tel" required autocomplete="tel">
+      </div>
+      <div>
+        <label for="il">İl</label>
+        <select id="il" name="il" required>
+          {% for il in business.service_area_provinces %}
+          <option value="{{ il }}">{{ il }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label for="ilce">İlçe</label>
+        <input id="ilce" name="ilce" type="text" required>
+      </div>
+      <div class="full">
+        <label for="service">Hizmet</label>
+        <select id="service" name="service" required>
+          <option value="Kombi Bakımı">Kombi Bakımı</option>
+          <option value="Petek Temizliği">Petek Temizliği</option>
+          <option value="Kombi + Petek Paketi">Kombi + Petek Paketi</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="note">Kısa Açıklama (opsiyonel)</label>
+        <textarea id="note" name="note"></textarea>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-whatsapp btn-block" style="margin-top:16px">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.3.7-1.5 1.4-2.1 1.5-.5.1-1.2.2-3.5-.7-2.9-1.2-4.8-4.1-5-4.3-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .5-.1.7.5.3.7 1 2.2 1 2.4.1.2.1.3 0 .5-.3.7-.7 1-1 1.3-.2.2-.2.4 0 .6.7 1.3 1.6 2.2 2.9 2.9.2.1.4.1.6-.1.3-.3.7-.8 1-1.2.2-.2.4-.3.6-.2l1.9.9c.2.1.4.2.5.3.1.2.1.7-.2 1.3z"/></svg>
+      WhatsApp'tan Gönder
+    </button>
+    <p class="form-note">Gönder butonuna bastığınızda WhatsApp açılır ve bilgileriniz otomatik olarak hazır bir mesaja eklenir; formu doldurmak herhangi bir taahhüt oluşturmaz.</p>
+  </form>
 </section>
 
 <section class="container faq">
-  <h2>Sık Sorulan Sorular</h2>
+  <p class="eyebrow" style="text-align:center">Sık Sorulan Sorular</p>
+  <h2 class="section-title">Merak Edilenler</h2>
   {% for item in business.faq %}
   <details>
     <summary>{{ item.q }}</summary>
     <p>{{ item.a }}</p>
   </details>
   {% endfor %}
-</section>
-
-<section class="container" style="text-align:center">
-  <h2>İletişim</h2>
-  <p>
-    <a href="tel:+{{ business.business.phone_e164 }}">{{ business.business.phone_display }}</a><br>
-    {{ business.business.address }}<br>
-    <a href="{{ business.business.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
-  </p>
-  <p style="font-size:.85rem;color:var(--ice)">
+  <p style="font-size:.85rem;color:var(--slate);text-align:center;margin-top:16px">
     * Garanti kapsamı hizmet sırasında netleştirilir.
   </p>
 </section>

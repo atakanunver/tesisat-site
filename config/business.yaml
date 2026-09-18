@@ -22,7 +22,8 @@ whatsapp_messages:
   google: "Merhaba, Google'da gördüğüm Gürbüz Teknik Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
   instagram: "Merhaba, Instagram'da gördüğüm Gürbüz Teknik Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
   facebook: "Merhaba, Facebook'ta gördüğüm Gürbüz Teknik Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
-  default: "Merhaba, Gürbüz Teknik Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
+  sms: "Merhaba, SMS'te gönderdiğiniz internet sitesi üzerinden yazıyorum, Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
+  default: "Merhaba, internet sitenizden yazıyorum, Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
 
 service_areas:
   - slug: cankiri-kombi-bakimi

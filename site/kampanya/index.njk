@@ -6,24 +6,28 @@ eleventyComputed:
   description: "Kombi bakımı + petek temizliği tek pakette {{ business.campaign.package_price }} TL. WhatsApp'tan hemen randevu alın."
 ---
 <section class="hero">
+  <p class="eyebrow">{{ business.business.legal_note }}</p>
   <h1>{{ business.campaign.name }}</h1>
-  <p>Kombi Bakımı + Petek Temizliği</p>
+  <p class="lead">Kombi Bakımı + Petek Temizliği</p>
   <div class="price-tag">
     <span class="now">{{ business.campaign.package_price }} TL</span>
     <span class="was">{{ business.campaign.normal_total_price }} TL</span>
   </div>
-  <ul style="list-style:none;padding:0;margin:0 0 20px">
+  <ul style="list-style:none;padding:0;margin:0 0 20px;color:#DCE6EE">
     <li>✓ {{ business.campaign.brands_note }}</li>
     <li>✓ {{ business.campaign.radiator_limit }} peteğe kadar petek temizliği</li>
     <li>✓ {{ business.campaign.warranty_months }} ay garanti*</li>
   </ul>
-  <a class="btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">
-    WhatsApp'tan Randevu Al
-  </a>
+  <div class="hero-ctas">
+    <a class="btn btn-call" href="tel:+{{ business.business.phone_e164 }}">Hemen Ara</a>
+    <a class="btn btn-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">
+      WhatsApp'tan Randevu Al
+    </a>
+  </div>
 </section>
 
 <section class="container faq">
-  <h2>Sık Sorulan Sorular</h2>
+  <h2 class="section-title">Sık Sorulan Sorular</h2>
   {% for item in business.faq %}
   <details>
     <summary>{{ item.q }}</summary>

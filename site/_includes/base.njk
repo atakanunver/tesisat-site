@@ -5,6 +5,20 @@
 <title>{{ title }} | {{ business.business.name }}</title>
 <meta name="description" content="{{ description }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="{{ site.domain }}{{ site.base }}{{ page.url }}">
+<meta name="theme-color" content="#0B1F33">
+<link rel="icon" type="image/svg+xml" href="{{ site.base }}/assets/img/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="{{ business.business.name }}">
+<meta property="og:title" content="{{ title }} | {{ business.business.name }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ site.domain }}{{ site.base }}{{ page.url }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ title }} | {{ business.business.name }}">
+<meta name="twitter:description" content="{{ description }}">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Karla:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -20,15 +34,38 @@
 </main>
 
 <footer>
+  <p class="foot-cta">
+    <a class="btn btn-call" href="tel:+{{ business.business.phone_e164 }}">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Hemen Ara
+    </a>
+  </p>
   <p>© 2026 {{ business.business.name }} – {{ business.business.address }}</p>
   <p><a href="tel:+{{ business.business.phone_e164 }}">{{ business.business.phone_display }}</a></p>
+  <p><a href="{{ business.business.facebook_url }}" target="_blank" rel="noopener">Facebook</a></p>
 </footer>
 
-<a class="btn-whatsapp whatsapp-sticky" id="whatsapp-sticky" data-whatsapp-cta
+<a class="btn btn-whatsapp whatsapp-sticky" id="whatsapp-sticky" data-whatsapp-cta
    href="https://wa.me/{{ business.business.phone_e164 }}"
    aria-label="WhatsApp'tan yazın">
+  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.3.7-1.5 1.4-2.1 1.5-.5.1-1.2.2-3.5-.7-2.9-1.2-4.8-4.1-5-4.3-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .5-.1.7.5.3.7 1 2.2 1 2.4.1.2.1.3 0 .5-.3.7-.7 1-1 1.3-.2.2-.2.4 0 .6.7 1.3 1.6 2.2 2.9 2.9.2.1.4.1.6-.1.3-.3.7-.8 1-1.2.2-.2.4-.3.6-.2l1.9.9c.2.1.4.2.5.3.1.2.1.7-.2 1.3z"/></svg>
   WhatsApp
 </a>
+
+<nav class="mobile-bar" aria-label="Hızlı iletişim">
+  <a class="mb-call" href="tel:+{{ business.business.phone_e164 }}">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Ara
+  </a>
+  <a class="mb-whatsapp" data-whatsapp-cta href="https://wa.me/{{ business.business.phone_e164 }}">
+    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.3.7-1.5 1.4-2.1 1.5-.5.1-1.2.2-3.5-.7-2.9-1.2-4.8-4.1-5-4.3-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .5-.1.7.5.3.7 1 2.2 1 2.4.1.2.1.3 0 .5-.3.7-.7 1-1 1.3-.2.2-.2.4 0 .6.7 1.3 1.6 2.2 2.9 2.9.2.1.4.1.6-.1.3-.3.7-.8 1-1.2.2-.2.4-.3.6-.2l1.9.9c.2.1.4.2.5.3.1.2.1.7-.2 1.3z"/></svg>
+    WhatsApp
+  </a>
+  <a class="mb-appt" href="{{ site.base }}/#randevu">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    Randevu
+  </a>
+</nav>
 
 <script>
   window.__GT_WHATSAPP__ = {
