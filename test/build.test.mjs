@@ -40,3 +40,15 @@ test("hizmet bölgeleri linkleri sayfada var", () => {
   assert.match(html, /\/cankiri-kombi-bakimi\//);
   assert.match(html, /\/kastamonu-petek-temizligi\//);
 });
+
+test("JSON-LD LocalBusiness ve FAQPage geçerli JSON olarak parse ediliyor", () => {
+  const html = readFileSync("_site/index.html", "utf8");
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  assert.equal(blocks.length, 2);
+  const localBusiness = JSON.parse(blocks[0][1]);
+  const faqPage = JSON.parse(blocks[1][1]);
+  assert.equal(localBusiness["@type"], "LocalBusiness");
+  assert.deepEqual(localBusiness.areaServed, ["Çankırı", "Çankırı", "Kastamonu", "Kastamonu"]);
+  assert.equal(faqPage["@type"], "FAQPage");
+  assert.ok(faqPage.mainEntity.length >= 5);
+});
