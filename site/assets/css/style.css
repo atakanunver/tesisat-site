@@ -114,7 +114,7 @@ a{color:inherit}
 
 footer{
   background:var(--night);
-  color:#cbd5e1;
+  color:var(--ice);
   text-align:center;
   padding:32px 20px;
 }
