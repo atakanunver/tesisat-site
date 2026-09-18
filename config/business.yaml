@@ -1,0 +1,61 @@
+business:
+  name: "Gürbüz Teknik"
+  legal_note: "Doğalgaz yetki belgeli"
+  phone_display: "0534 682 55 60"
+  phone_e164: "905346825560"
+  address: "Kalekapı Mah. İstasyon Cad. Hocalar Sokak, 18300 Kurşunlu/Çankırı"
+  working_hours: "7/24"
+  facebook_url: "https://www.facebook.com/profile.php?id=100063294876188"
+  site_url: "https://atakanunver.github.io/tesisat-site/"
+
+campaign:
+  name: "Kışa Hazırlık Kampanyası"
+  boiler_maintenance_price: 3000
+  radiator_cleaning_price: 2000
+  package_price: 4000
+  normal_total_price: 5000
+  radiator_limit: 15
+  warranty_months: 6
+  brands_note: "Tüm marka kombiler"
+
+whatsapp_messages:
+  google: "Merhaba, Google'da gördüğüm Gürbüz Teknik Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
+  instagram: "Merhaba, Instagram'da gördüğüm Gürbüz Teknik Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
+  facebook: "Merhaba, Facebook'ta gördüğüm Gürbüz Teknik Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
+  default: "Merhaba, Gürbüz Teknik Kışa Hazırlık Kampanyası hakkında bilgi almak istiyorum."
+
+service_areas:
+  - slug: cankiri-kombi-bakimi
+    il: "Çankırı"
+    service: "Kombi Bakımı"
+    title: "Çankırı Kombi Bakımı"
+    intro: "Çankırı genelinde tüm marka kombilerde yerinde bakım hizmeti veriyoruz. Merkez üssümüz Kurşunlu'dur."
+  - slug: cankiri-petek-temizligi
+    il: "Çankırı"
+    service: "Petek Temizliği"
+    title: "Çankırı Petek Temizliği"
+    intro: "Çankırı genelinde 15 peteğe kadar petek temizliği hizmeti sunuyoruz."
+  - slug: kastamonu-kombi-bakimi
+    il: "Kastamonu"
+    service: "Kombi Bakımı"
+    title: "Kastamonu Kombi Bakımı"
+    intro: "Kastamonu genelinde tüm marka kombilerde yerinde bakım hizmeti veriyoruz."
+  - slug: kastamonu-petek-temizligi
+    il: "Kastamonu"
+    service: "Petek Temizliği"
+    title: "Kastamonu Petek Temizliği"
+    intro: "Kastamonu genelinde 15 peteğe kadar petek temizliği hizmeti sunuyoruz."
+
+faq:
+  - q: "Kışa Hazırlık Kampanyası kapsamında neler var?"
+    a: "Kombi bakımı ve 15 peteğe kadar petek temizliği bir arada 4.000 TL (normal toplam 5.000 TL)."
+  - q: "Kampanya hangi bölgelerde geçerli?"
+    a: "Kurşunlu merkezli olarak Çankırı ve Kastamonu genelinde hizmet veriyoruz."
+  - q: "Hangi marka kombilerde bakım yapıyorsunuz?"
+    a: "Tüm marka kombilerde bakım hizmeti veriyoruz."
+  - q: "Garanti süresi ne kadar?"
+    a: "Yapılan bakım işçiliği için 6 ay garanti sunulmaktadır."
+  - q: "Randevu nasıl alınır?"
+    a: "WhatsApp üzerinden 0534 682 55 60 numaramıza yazarak randevu talebinde bulunabilirsiniz."
+  - q: "Çalışma saatleriniz nedir?"
+    a: "7/24 hizmet veriyoruz."

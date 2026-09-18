@@ -1,0 +1,15 @@
+{
+  "name": "gurbuz-teknik-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "test": "node --test test/"
+  },
+  "engines": { "node": ">=18" },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "js-yaml": "^4.1.0"
+  }
+}
