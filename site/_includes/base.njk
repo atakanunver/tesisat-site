@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>{{ title }} | {{ business.business.name }}</title>
+<meta name="description" content="{{ description }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Karla:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ site.base }}/assets/css/style.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+<main id="icerik">
+{{ content | safe }}
+</main>
+
+<footer>
+  <p>© 2026 {{ business.business.name }} – {{ business.business.address }}</p>
+  <p><a href="tel:+{{ business.business.phone_e164 }}">{{ business.business.phone_display }}</a></p>
+</footer>
+
+<a class="btn-whatsapp whatsapp-sticky" id="whatsapp-sticky"
+   href="https://wa.me/{{ business.business.phone_e164 }}"
+   aria-label="WhatsApp'tan yazın">
+  WhatsApp
+</a>
+
+<script src="{{ site.base }}/assets/js/whatsapp.js" defer></script>
+</body>
+</html>
