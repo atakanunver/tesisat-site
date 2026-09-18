@@ -49,37 +49,16 @@ a{color:inherit}
 .section-title{font-size:clamp(1.5rem,4vw,2rem);text-align:center;margin-bottom:8px}
 .section-sub{text-align:center;color:var(--slate);max-width:560px;margin:0 auto 32px}
 
-.fin-pattern{
-  background-image:repeating-linear-gradient(
-    90deg, var(--ice) 0 2px, transparent 2px 24px
-  );
-  opacity:.25;
-}
-
 /* ---- Hero ---- */
 .hero{
   position:relative;
-  background:linear-gradient(160deg, var(--night) 0%, var(--night-2) 100%);
+  background:radial-gradient(120% 140% at 50% -10%, var(--night-2) 0%, var(--night) 60%);
   color:#fff;
   padding:56px 20px 44px;
   text-align:center;
   overflow:hidden;
 }
-.hero::before{
-  content:"";
-  position:absolute;inset:0;
-  background-image:repeating-linear-gradient(
-    90deg, var(--ice) 0 2px, transparent 2px 24px
-  );
-  opacity:.35;
-  animation:warm-up 1.6s ease-out 1 forwards;
-}
-@keyframes warm-up{
-  from{ filter:hue-rotate(0deg); opacity:.35; }
-  to{ filter:hue-rotate(-25deg); opacity:.55; }
-}
 @media (prefers-reduced-motion: reduce){
-  .hero::before{ animation:none; filter:hue-rotate(-25deg); opacity:.55; }
   *{ transition:none !important; animation-duration:.01ms !important; }
 }
 .hero > *{position:relative;z-index:1}
